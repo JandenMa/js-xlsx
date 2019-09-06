@@ -1,18 +1,32 @@
-# xlsx-style
+# @jandenma/xlsx-style
 
 Parser and writer for various spreadsheet formats.  Pure-JS cleanroom implementation from official specifications and related documents.
 
-# About this fork
-**NOTE:** [This project](https://github.com/SheetJS/js-xlsx/tree/beta) is a fork of the original (and awesome) [SheetJS/xlsx](https://github.com/SheetJS/js-xlsx) project.
-It is extended to enable cell formats to be read from and written to .xlsx workbooks.
-The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
-Report any issues to https://github.com/protobi/js-xlsx/issues.
+> ### About this fork
+> **NOTE:** [This project](https://github.com/JandenMa/js-xlsx) is a fork of the original (and awesome) [SheetJS/xlsx](https://github.com/SheetJS/js-xlsx) and [xlsx-style](https://github.com/protobi/js-xlsx) project.
+>
+> It is extended to enable cell formats to be read from and written to .xlsx workbooks.
+>
+> The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
+>
+> Report any issues to https://github.com/JandenMa/js-xlsx/issues.
+>
+> **Installation**
+>
+> ``` bash
+> npm install @jandenma/xlsx-style --save
+> ```
+>
+> **Change Logs**
+>
+> - Build20190906 (0.8.13): 
+>   - Bug fixed: `This relative module was not found: ./cptable in ./node_modules/xlsx-style@0.8.13@xlsx-style/dist/cpexcel.js`
+>   - Correct horizontal alignment in README 
 
 For those contributing to this fork:
-* `master` is the main branch, which follows the original repo to enable a future pull request.
 * `beta` branch is published to npm and bower to make this fork available for use.
 
-# Supported formats
+# Supported formats (based on original repo)
 
 Supported read formats:
 
@@ -522,7 +536,7 @@ The exported `write` and `writeFile` functions accept an options argument:
   so non-Excel tools may ignore the data or blow up in the presence of dates.
 - showGridLines and tabSelected are currently used when generating an XLSX file but not yet parse.
 - Props specifies workbook properties
-   
+  
 
 
 
@@ -535,40 +549,40 @@ top-level attributes: `fill`, `font`, `numFmt`, `alignment`, and `border`.
 | Style Attribute | Sub Attributes | Values |
 | :-------------- | :------------- | :------------- | :----- |
 | fill            | patternType    |  `"solid"` or `"none"` |
-|                 | fgColor        |  `COLOR_SPEC`
-|                 | bgColor        |  `COLOR_SPEC`
-| font            | name           |  `"Calibri"` // default
-|                 | sz             |  `"11"` // font size in points
-|                 | color          |  `COLOR_SPEC`
-|                 | bold           |  `true || false`
-|                 | underline      |  `true || false`
-|                 | italic         |  `true || false`
-|                 | strike         |  `true || false`
-|                 | outline        |  `true || false`
-|                 | shadow         |  `true || false`
-|                 | vertAlign      |  `true || false`
-| numFmt          |                |  `"0"`  // integer index to built in formats, see StyleBuilder.SSF property
-|                 |                |  `"0.00%"` // string matching a built-in format, see StyleBuilder.SSF
-|                 |                |  `"0.0%"`  // string specifying a custom format
-|                 |                |  `"0.00%;\\(0.00%\\);\\-;@"` // string specifying a custom format, escaping special characters
-|                 |                |  `"m/dd/yy"` // string a date format using Excel's format notation
-| alignment       | vertical       | `"bottom"||"center"||"top"`
-|                 | horizontal     | `"bottom"||"center"||"top"`
-|                 | wrapText       |  `true || false`
-|                 | readingOrder   |  `2` // for right-to-left
-|                 | textRotation   | Number from `0` to `180` or `255` (default is `0`)
-|                 |                |  `90` is rotated up 90 degrees
-|                 |                |  `45` is rotated up 45 degrees
-|                 |                | `135` is rotated down 45 degrees 
-|                 |                | `180` is rotated down 180 degrees
-|                 |                | `255` is special,  aligned vertically
-| border          | top            | `{ style: BORDER_STYLE, color: COLOR_SPEC }`
-|                 | bottom         | `{ style: BORDER_STYLE, color: COLOR_SPEC }`
-|                 | left           | `{ style: BORDER_STYLE, color: COLOR_SPEC }`
-|                 | right          | `{ style: BORDER_STYLE, color: COLOR_SPEC }`
-|                 | diagonal       | `{ style: BORDER_STYLE, color: COLOR_SPEC }`
-|                 | diagonalUp     | `true||false`
-|                 | diagonalDown   | `true||false`
+|                 | fgColor        |  `COLOR_SPEC` |
+|                 | bgColor        |  `COLOR_SPEC` |
+| font            | name           |  `"Calibri"` // default |
+|                 | sz             |  `"11"` // font size in points |
+|                 | color          |  `COLOR_SPEC` |
+|                 | bold           |  `true || false` |
+|                 | underline      |  `true || false` |
+|                 | italic         |  `true || false` |
+|                 | strike         |  `true || false` |
+|                 | outline        |  `true || false` |
+|                 | shadow         |  `true || false` |
+|                 | vertAlign      |  `true || false` |
+| numFmt          |                |  `"0"`  // integer index to built in formats, see StyleBuilder.SSF property |
+|                 |                |  `"0.00%"` // string matching a built-in format, see StyleBuilder.SSF |
+|                 |                |  `"0.0%"`  // string specifying a custom format |
+|                 |                |  `"0.00%;\\(0.00%\\);\\-;@"` // string specifying a custom format, escaping special characters |
+|                 |                |  `"m/dd/yy"` // string a date format using Excel's format notation |
+| alignment       | vertical       | `"bottom"||"center"||"top"` |
+|                 | horizontal     | `"left"||"center"||"right"` |
+|                 | wrapText       |  `true || false` |
+|                 | readingOrder   |  `2` // for right-to-left |
+|                 | textRotation   | Number from `0` to `180` or `255` (default is `0`) |
+|                 |                |  `90` is rotated up 90 degrees |
+|                 |                |  `45` is rotated up 45 degrees |
+|                 |                | `135` is rotated down 45 degrees  |
+|                 |                | `180` is rotated down 180 degrees |
+|                 |                | `255` is special,  aligned vertically |
+| border          | top            | `{ style: BORDER_STYLE, color: COLOR_SPEC }` |
+|                 | bottom         | `{ style: BORDER_STYLE, color: COLOR_SPEC }` |
+|                 | left           | `{ style: BORDER_STYLE, color: COLOR_SPEC }` |
+|                 | right          | `{ style: BORDER_STYLE, color: COLOR_SPEC }` |
+|                 | diagonal       | `{ style: BORDER_STYLE, color: COLOR_SPEC }` |
+|                 | diagonalUp     | `true||false` |
+|                 | diagonalDown   | `true||false` |
 
 
 **COLOR_SPEC**: Colors for `fill`, `font`, and `border` are specified as objects, either:
