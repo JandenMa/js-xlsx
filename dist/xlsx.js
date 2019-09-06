@@ -7670,6 +7670,7 @@ function write_ws_xml_cols(ws, cols) {
 
 function write_ws_xml_cell(cell, ref, ws, opts, idx, wb) {
 	if(cell.v === undefined && cell.s === undefined) return "";
+	if(cell.v === undefined || cell.v === null) return "";
 	var vv = "";
 	var oldt = cell.t, oldv = cell.v;
 	switch(cell.t) {
