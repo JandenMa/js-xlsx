@@ -23,6 +23,8 @@ Parser and writer for various spreadsheet formats.  Pure-JS cleanroom implementa
 >   - Bug fixed: `This relative module was not found: ./cptable in ./node_modules/xlsx-style@0.8.13@xlsx-style/dist/cpexcel.js`
 >   - Bug fixed: `if cell.v is undefined or null but cell.s isn't null, will display undefined`
 >   - Correct horizontal alignment in README 
+> - Build20190907(0.8.16 - 0.8.17):
+>   - Bug fixed: `Can not resolve "../xlsx"` , `Can not resolve "xlsx"`
 
 For those contributing to this fork:
 * `beta` branch is published to npm and bower to make this fork available for use.

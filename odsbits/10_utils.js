@@ -4,11 +4,14 @@ var get_utils = function() {
     try {
       return require('./xlsx').utils
     } catch (e) {
-      try {
-        return require('../xlsx').utils
-      } catch (ee) {
-        return require('xlsx').utils
-      }
+      // 0.8.16: fix can't resolve '../xlsx'
+      // 0.8.17: fix can't resolve 'xlsx'
+      throw e
+      //   try {
+      //     return require('../xlsx').utils
+      //   } catch (ee) {
+      //     return require('xlsx').utils
+      //   }
     }
   throw new Error('Cannot find XLSX utils')
 }
