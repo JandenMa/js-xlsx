@@ -19,6 +19,7 @@ tmp
 *.htm
 *.html
 *.sheetjs
+package-lock.json
 
 lab/
 test_files
