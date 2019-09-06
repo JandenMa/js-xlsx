@@ -7670,6 +7670,7 @@ function write_ws_xml_cols(ws, cols) {
 
 function write_ws_xml_cell(cell, ref, ws, opts, idx, wb) {
 	if(cell.v === undefined && cell.s === undefined && (!cell.f)) return "";
+	// v0.8.14 bug fixes: if v is undefined or null but s isn't null, will display undefined
 	if(cell.v === undefined || cell.v === null) return "";
 	var vv = "";
 	var oldt = cell.t, oldv = cell.v;
