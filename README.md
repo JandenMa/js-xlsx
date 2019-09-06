@@ -27,7 +27,7 @@ Parser and writer for various spreadsheet formats.  Pure-JS cleanroom implementa
 For those contributing to this fork:
 * `beta` branch is published to npm and bower to make this fork available for use.
 
-# Supported formats (based on original repo)
+# Supported formats (based on the original repo)
 
 Supported read formats:
 

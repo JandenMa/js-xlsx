@@ -20,6 +20,7 @@ tmp
 *.html
 *.sheetjs
 package-lock.json
+.DS_Store
 
 lab/
 test_files
